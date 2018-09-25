@@ -36,11 +36,12 @@ public class JLabelIconSample {
         //1. 利用 url 建立 ImageIcon
         //2. 取得 scaled instance
         //3. 設定到 label1
-        ImageIcon icon=new ImageIcon(new URL());
-        Icon icon2=new ImageIcon(icon.getImage().getScaledInstance());
+        ImageIcon icon=new ImageIcon(new URL("https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2015/08/27/1/1251162.jpg&x=0&y=0&sw=0&sh=0&sl=W&fw=800"));
+        //Icon icon2=new ImageIcon(icon.getImage().getScaledInstance());
         
-        ////////////////////////////
-     
+        Image img=icon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);////////////////////////////
+        ImageIcon icon2=new ImageIcon(img);
+        label1.setIcon(icon2);
         frame.add(label1);
         frame.add(textField);
         frame.setSize(800, 500);
